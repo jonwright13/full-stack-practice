@@ -79,6 +79,7 @@ Custom exceptions:
 
 ## Project Structure
 
+```text
 banking-transactions/
 │
 ├── account.py
@@ -89,6 +90,7 @@ banking-transactions/
 ├── requirements.txt
 ├── Dockerfile
 └── README.md
+```
 
 ## Running Tests Locally
 
