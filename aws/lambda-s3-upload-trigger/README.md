@@ -45,6 +45,8 @@ npm run deploy:update # Subsequent deployments
 ├── test-event.ts     # Local test with mock S3 event
 ├── dist/             # Compiled output (generated)
 ├── .env              # Environment variables (gitignored)
+├── deploy.sh         # Deployment script
+├── prompt.md         # Challenge description
 └── tsconfig.json
 ```
 
