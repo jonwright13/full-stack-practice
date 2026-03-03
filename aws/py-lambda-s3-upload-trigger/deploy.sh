@@ -1,12 +1,16 @@
 #!/bin/bash
-zip -r function.zip dist/index.js node_modules
+
+# Load .env
+export $(cat .env | xargs)
+
+zip -r function.zip src/ 
 
 if [ "$1" = "create" ]; then
   aws lambda create-function \
     --function-name $AWS_FUNCTION_NAME \
-    --runtime nodejs20.x \
+    --runtime python3.12 \
     --role arn:aws:iam::$AWS_ACCOUNT_ID:role/$AWS_ROLE \
-    --handler index.handler \
+    --handler src/main.handler \
     --zip-file fileb://function.zip
 else
   aws lambda update-function-code \
